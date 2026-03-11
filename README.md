@@ -1,48 +1,84 @@
 # runlens
 
-`runlens` summarizes JSONL traces from agent runs, tool calls, or evaluation loops.
+`runlens` is a Go CLI that summarizes JSONL traces from agent runs, tool calls, and evaluation loops.
 
-## Example
+It helps you spot slow tools, flaky execution paths, and token-heavy runs before they turn into production issues.
+
+## Quickstart
+
+### Install
+
+Install with your preferred method:
+
+```bash
+# From the custom tap
+brew tap itamaker/tap https://github.com/itamaker/homebrew-tap
+brew install itamaker/tap/runlens
+```
+
+```bash
+# Or install from source
+go install github.com/itamaker/runlens@latest
+```
+
+<details>
+<summary>You can also download binaries from <a href="https://github.com/itamaker/runlens/releases">GitHub Releases</a>.</summary>
+
+Current release archives:
+
+- macOS (Apple Silicon/arm64): `runlens_0.1.0_darwin_arm64.tar.gz`
+- macOS (Intel/x86_64): `runlens_0.1.0_darwin_amd64.tar.gz`
+- Linux (arm64): `runlens_0.1.0_linux_arm64.tar.gz`
+- Linux (x86_64): `runlens_0.1.0_linux_amd64.tar.gz`
+
+Each archive contains a single executable: `runlens`.
+
+</details>
+
+If the repository is still private, release-based installs require GitHub access to the repository assets.
+
+### First Run
+
+Run:
+
+```bash
+runlens summary -input examples/run.jsonl
+```
+
+## Requirements
+
+- Go `1.22+`
+
+## Run
 
 ```bash
 go run . summary -input examples/run.jsonl
 ```
 
-## Use cases
-
-- Inspect OpenClaw-style tool execution logs.
-- Spot slow or flaky tools before they become production incidents.
-- Export machine-readable summaries with `-json`.
-
-## Install
-
-From source:
+Machine-readable output:
 
 ```bash
-go install github.com/itamaker/runlens@latest
+go run . summary -input examples/run.jsonl -json
 ```
 
-From Homebrew after you publish a tap formula:
+## Build From Source
 
 ```bash
-brew tap itamaker/tap https://github.com/itamaker/homebrew-tap
-brew install itamaker/tap/runlens
+make build
 ```
-
-## Repo-Ready Files
-
-- `.github/workflows/ci.yml`
-- `.github/workflows/release.yml`
-- `.goreleaser.yaml`
-- `PUBLISHING.md`
-- `scripts/render-homebrew-formula.sh`
-
-## Release
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+go build -o dist/runlens .
 ```
 
-The tagged release workflow publishes multi-platform binaries and `checksums.txt`, which you can feed into the Homebrew formula renderer.
-The generated formula should be committed to `https://github.com/itamaker/homebrew-tap`.
+## What It Does
+
+1. Parses JSONL event streams from agent or tool executions.
+2. Computes aggregate latency, success rate, and token totals.
+3. Produces per-tool summaries for failure analysis.
+4. Exports either human-readable output or JSON for automation.
+
+## Notes
+
+- `examples/run.jsonl` is a good shape reference for your own logs.
+- Maintainer release steps live in `PUBLISHING.md`.
