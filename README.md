@@ -6,6 +6,8 @@
 
 It helps you spot slow tools, flaky execution paths, and token-heavy runs before they turn into production issues.
 
+![runlens social preview](docs/images/social-preview.png)
+
 ## Support
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/amaker)
