@@ -19,7 +19,7 @@ go run . summary -input examples/run.jsonl
 From source:
 
 ```bash
-go install github.com/YOUR_GITHUB_USER/runlens@latest
+go install github.com/itamaker/runlens@latest
 ```
 
 From Homebrew after you publish a tap formula:
