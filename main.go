@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/jonny/current-projects/runlens/internal/app"
+	"github.com/itamaker/runlens/internal/app"
 )
 
 func main() {

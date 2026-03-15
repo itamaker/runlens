@@ -1,4 +1,4 @@
-module github.com/jonny/current-projects/runlens
+module github.com/itamaker/runlens
 
 go 1.23.0
 
