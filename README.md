@@ -2,9 +2,9 @@
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
-`runlens` is a Go CLI that summarizes JSONL traces from agent runs, tool calls, and evaluation loops.
+`runlens` is a Go CLI for analyzing JSONL traces from agent runs, tool calls, and evaluation loops.
 
-It helps you spot slow tools, flaky execution paths, and token-heavy runs before they turn into production issues.
+It helps you spot failures, flaky paths, latency outliers, and token-heavy runs before they turn into production issues.
 
 ![runlens social preview](docs/images/social-preview.png)
 
@@ -25,10 +25,10 @@ brew install itamaker/tap/runlens
 
 Current release archives:
 
-- macOS (Apple Silicon/arm64): `runlens_0.1.1_darwin_arm64.tar.gz`
-- macOS (Intel/x86_64): `runlens_0.1.1_darwin_amd64.tar.gz`
-- Linux (arm64): `runlens_0.1.1_linux_arm64.tar.gz`
-- Linux (x86_64): `runlens_0.1.1_linux_amd64.tar.gz`
+- macOS (Apple Silicon/arm64): `runlens_0.2.0_darwin_arm64.tar.gz`
+- macOS (Intel/x86_64): `runlens_0.2.0_darwin_amd64.tar.gz`
+- Linux (arm64): `runlens_0.2.0_linux_arm64.tar.gz`
+- Linux (x86_64): `runlens_0.2.0_linux_amd64.tar.gz`
 
 Each archive contains a single executable: `runlens`.
 
