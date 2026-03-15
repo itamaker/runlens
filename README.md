@@ -39,7 +39,21 @@ Each archive contains a single executable: `runlens`.
 Run:
 
 ```bash
+runlens
+```
+
+This launches the interactive Bubble Tea terminal UI.
+
+You can still use the direct command form:
+
+```bash
 runlens summary -input examples/run.jsonl
+```
+
+For a deeper diagnosis:
+
+```bash
+runlens diagnose -input examples/run.jsonl
 ```
 
 ## Requirements
@@ -49,6 +63,12 @@ runlens summary -input examples/run.jsonl
 ## Run
 
 ```bash
+go run .
+```
+
+Or run a direct command:
+
+```bash
 go run . summary -input examples/run.jsonl
 ```
 
@@ -56,6 +76,12 @@ Machine-readable output:
 
 ```bash
 go run . summary -input examples/run.jsonl -json
+```
+
+Diagnostic report:
+
+```bash
+go run . diagnose -input examples/run.jsonl
 ```
 
 ## Build From Source
@@ -73,7 +99,8 @@ go build -o dist/runlens .
 1. Parses JSONL event streams from agent or tool executions.
 2. Computes aggregate latency, success rate, and token totals.
 3. Produces per-tool summaries for failure analysis.
-4. Exports either human-readable output or JSON for automation.
+4. Clusters recurring errors, surfaces flaky tools, and highlights latency outliers.
+5. Exports either human-readable output or JSON for automation.
 
 ## Notes
 
@@ -90,3 +117,7 @@ go build -o dist/runlens .
 
 [author-zhaoyang]: https://github.com/itamaker
 [avatar-zhaoyang]: https://images.weserv.nl/?url=https://github.com/itamaker.png&h=120&w=120&fit=cover&mask=circle&maxage=7d
+
+## License
+
+[MIT](LICENSE)
